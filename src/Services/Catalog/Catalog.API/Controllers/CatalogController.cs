@@ -81,8 +81,6 @@ namespace Catalog.API.Controllers
         [ProducesResponseType(typeof(bool), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> UpdateProduct([FromBody] Product product)
         {
-            await _productRepository.UpdateProduct(product);
-
             return Ok(await _productRepository.UpdateProduct(product));
         }
     }
